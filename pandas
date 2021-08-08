@@ -1,0 +1,56 @@
+import numpy as np
+import pandas as pd
+
+#Creating a dataframe with the help of a dictionary
+
+dic1={'Name':['Sudhanshi','Aditi','Aditya','Rohit','Venkat'],'Age':[21,22,22,21,23],'Percentage':[87,84,93,78,91]}
+df= DataFrame(dic1)
+
+df
+
+#### Importing my excel file
+
+dataset=pd.read_excel('sample data.xlsx')
+
+#Accessing elements 
+dataset.head(5)
+
+dataset.shape
+
+dataset.loc[1]
+
+dataset.iloc[::6]
+
+type(dataset.iloc[::6])   # dataframe type
+
+dataset.iloc[1:5,5:8]
+
+dataset['Marks'].value_counts()
+
+#creating a Dataframe
+df=pd.DataFrame(np.arange(20).reshape(5,4),index=['row1','row2','row3','row4','row5'],columns=['column1','column2','column3','columns4'])
+
+df
+
+df.iloc[0:3]
+
+#Converting dataframe into array
+df.iloc[:3,:3].values
+
+df['column3'].value_counts()
+
+df.tail(2)
+
+df.head(2)
+
+df.info()
+
+df.describe()
+
+#checking null values
+
+df.isnull()    #False denotes there is no null value
+
+df.isnull().sum()   #sum represent how many null value in our dataset
+
+
